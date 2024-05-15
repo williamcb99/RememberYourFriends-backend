@@ -7,9 +7,9 @@ const swaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'Books API',
+      title: 'RememberYourFriends API',
       version: '1.0.0',
-      description: 'Simple API to manage books',
+      description: 'Simple API to manage animals',
     },
     servers: [
       {
@@ -24,7 +24,7 @@ const swaggerSpec = swaggerJsdoc(swaggerOptions);
 const app = express();
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.use('/books', require('./routes/book_routes'));
+app.use('/animals', require('./routes/animal_routes'));
 app.use('*', (req, res) => {
   res.redirect('/api-docs');
 });
