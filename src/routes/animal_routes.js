@@ -18,6 +18,7 @@ const router = express.Router();
  *         - Fur
  *         - Breed
  *         - Description
+ *         - ImageURL
  *       properties:
  *         id:
  *           type: integer
@@ -46,6 +47,9 @@ const router = express.Router();
  *         Description:
  *           type: string
  *           description: The animal's description
+ *         ImageURL:
+ *           type: string
+ *           description: Link to the animals Image
  *       example:
  *         Id: 1
  *         Name: Neumann
@@ -56,6 +60,7 @@ const router = express.Router();
  *         Fur: Black
  *         Breed: Maine Coon
  *         Description: Neumann, our little lion, a glorious pitch black maine coon kitten who recently turned 7 months old
+ *         ImageURL: http://localhost:3000/img/neumann.jpg
  */
 
 /**
