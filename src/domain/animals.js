@@ -7,6 +7,7 @@ dotenv.config();
 const filePath = path.join(__dirname, 'animals.json');
 console.log(filePath)
 const mutex = new Mutex();
+console.log(process.env.USE_FILE_STORAGE);
 
 let animals = [];
 
