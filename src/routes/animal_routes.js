@@ -94,7 +94,7 @@ router.get('/', animalController.listAllAnimals);
  *             schema:
  *               $ref: '#/components/schemas/Animal'
  */
-router.get('/:bookId', animalController.getAnimalById);
+router.get('/:animalId', animalController.getAnimalById);
 
 /**
  * @swagger
@@ -142,7 +142,7 @@ router.post('/', animalController.createAnimal);
  *             schema:
  *               $ref: '#/components/schemas/Animal'
  */
-router.put('/:bookId', animalController.updateAnimal);
+router.put('/:animalId', animalController.updateAnimal);
 
 /**
  * @swagger
@@ -163,6 +163,6 @@ router.put('/:bookId', animalController.updateAnimal);
  *             schema:
  *               $ref: '#/components/schemas/Animal'
  */
-router.delete('/:bookId', animalController.deleteAnimal);
+router.delete('/:animalId', animalController.deleteAnimal);
 
 module.exports = router;
