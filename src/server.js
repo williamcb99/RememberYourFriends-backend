@@ -13,7 +13,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `http://localhost:3000`,
+        url: `http://localhost:3000/api`,
       },
     ],
   },
@@ -22,10 +22,8 @@ const swaggerOptions = {
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
 const app = express();
+app.use(express.static("public"))
 app.use(express.json());
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/animals', require('./routes/animal_routes'));
-app.use('*', (req, res) => {
-  res.redirect('/api-docs');
-});
 module.exports = app;

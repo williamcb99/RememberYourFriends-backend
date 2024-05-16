@@ -5,24 +5,24 @@ exports.listAllAnimals = (req, res) => {
 };
 
 exports.getAnimalById = (req, res) => {
-    const bookId = parseInt(req.params.bookId, 10);
-    const book = animalsDomain.getAnimalById(bookId);
+    const animalId = parseInt(req.params.animalId, 10);
+    const animal = animalsDomain.getAnimalById(animalId);
 
-    if (book) {
-        res.json(book);
+    if (animal) {
+        res.json(animal);
     } else {
         res.status(404).send({ message: 'Animal not found' });
     }
 };
 
 exports.createAnimal = (req, res) => {
-    const newBook = animalsDomain.createAnimal(req.body);
-    res.status(201).json(newBook);
+    const newAnimal = animalsDomain.createAnimal(req.body);
+    res.status(201).json(newAnimal);
 };
 
 exports.updateAnimal = (req, res) => {
-    const bookId = parseInt(req.params.bookId, 10);
-    const updatedAnimal = animalsDomain.updateAnimal(bookId, req.body);
+    const animalId = parseInt(req.params.animalId, 10);
+    const updatedAnimal = animalsDomain.updateAnimal(animalId, req.body);
 
     if (updatedAnimal) {
         res.json(updatedAnimal);
@@ -32,8 +32,8 @@ exports.updateAnimal = (req, res) => {
 };
 
 exports.deleteAnimal = (req, res) => {
-    const bookId = parseInt(req.params.bookId, 10);
-    const deletedAnimal = animalsDomain.deleteAnimal(bookId);
+    const animalId = parseInt(req.params.animalId, 10);
+    const deletedAnimal = animalsDomain.deleteAnimal(animalId);
 
     if (deletedAnimal) {
         res.json(deletedAnimal);

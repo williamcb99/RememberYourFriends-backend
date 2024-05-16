@@ -21,7 +21,7 @@ const router = express.Router();
  *       properties:
  *         id:
  *           type: integer
- *           description: The auto-generated id of the book
+ *           description: The auto-generated id of an animal
  *         Name:
  *           type: string
  *           description: The animal's name
