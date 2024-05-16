@@ -60,6 +60,10 @@ function getAnimalById(animalId) {
     return animals.find(a => a.id === animalId);
 }
 
+function getAnimalsByType(animalTypeId) {
+    return animals.filter(at => at.AnimalType === animalTypeId)
+}
+
 function createAnimal(newAnimal) {
     newAnimal.id = animals.length + 1;
     animals.push(newAnimal);
@@ -90,6 +94,7 @@ function deleteAnimal(animalId) {
 module.exports = {
     listAllAnimals,
     getAnimalById,
+    getAnimalsByType,
     createAnimal,
     updateAnimal,
     deleteAnimal

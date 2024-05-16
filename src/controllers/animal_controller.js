@@ -15,6 +15,17 @@ exports.getAnimalById = (req, res) => {
     }
 };
 
+exports.getAnimalsByType = (req, res) => {
+    const animalTypeId = parseInt(req.params.animalTypeId, 10);
+    const animals = animalsDomain.getAnimalsByType(animalTypeId);
+
+    if (animals.length >= 1) {
+        res.json(animals);
+    } else {
+        res.status(404).send({ message: 'AnimalType not found or no animals with matching type' });
+    }
+};
+
 exports.createAnimal = (req, res) => {
     const newAnimal = animalsDomain.createAnimal(req.body);
     res.status(201).json(newAnimal);

@@ -82,6 +82,29 @@ router.get('/', animalController.listAllAnimals);
 
 /**
  * @swagger
+ * /animals/{animalTypeId}:
+ *   get:
+ *     summary: Gets all animals by certain type
+ *     parameters:
+ *       - in: path
+ *         name: animalTypeId
+ *         schema:
+ *           type: integer
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: A list of animals with specific type
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Animal'
+ */
+router.get('/:animalTypeId', animalController.getAnimalsByType);
+
+/**
+ * @swagger
  * /animals/{animalId}:
  *   get:
  *     summary: Retrieves an animal based on their ID
